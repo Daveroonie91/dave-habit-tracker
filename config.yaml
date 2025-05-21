@@ -1,0 +1,12 @@
+credentials:
+  usernames:
+    your_username: Daveroonie
+      email: dummyemail@example.com # 
+      name: Dave
+      password: 7vwxAyvjY6
+cookie:
+  expiry_days: 30
+  key: 195c7cbcfa646c6510a1b9c9a76718bf732f9d82afc65855aa21f1052f2ae56f
+  name: dave_habit_tracker_cookie
+preauthorized:
+  emails: [] # Add emails here if you want to pre-authorize users without them registering (e.g., ["friend@example.com"])
