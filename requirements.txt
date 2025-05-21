@@ -2,4 +2,4 @@ streamlit
 pandas
 streamlit-authenticator
 PyYAML
-google-generativeai # Only if you updated Meal_Planner.py
+google-generativeai
