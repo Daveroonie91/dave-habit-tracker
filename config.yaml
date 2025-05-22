@@ -3,7 +3,7 @@ credentials:
     Daveroonie: # This line needs to be indented by 4 spaces (2 levels of 2 spaces, or 1 level of 4 spaces if you prefer)
       email: dummyemail@example.com
       name: Dave
-      password: 7vwxAyvjY6
+      password: $2b$12$lI.FBaqG54MDfgWHFTNFo.AzPJLceXsZO05GNjjTF.lf/DIxewP6i
 cookie:
   expiry_days: 30
   key: 195c7cbcfa646c6510a1b9c9a76718bf732f9d82afc65855aa21f1052f2ae56f
