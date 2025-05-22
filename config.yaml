@@ -1,7 +1,7 @@
 credentials:
   usernames:
-    your_username: Daveroonie
-      email: dummyemail@example.com # 
+    Daveroonie: # This line needs to be indented by 4 spaces (2 levels of 2 spaces, or 1 level of 4 spaces if you prefer)
+      email: dummyemail@example.com
       name: Dave
       password: 7vwxAyvjY6
 cookie:
@@ -9,4 +9,4 @@ cookie:
   key: 195c7cbcfa646c6510a1b9c9a76718bf732f9d82afc65855aa21f1052f2ae56f
   name: dave_habit_tracker_cookie
 preauthorized:
-  emails: [] # Add emails here if you want to pre-authorize users without them registering (e.g., ["friend@example.com"])
+  emails: []
