@@ -20,11 +20,12 @@ authenticator = st_auth.Authenticate(
     config['cookie']['name'],
     config['cookie']['key'],
     config['cookie']['expiry_days'],
-    # config['preauthorized'] # REMOVED THIS LINE
+    # config['preauthorized'] # This line was already removed
 )
 
 # --- LOGIN FORM ---
-name, authentication_status, username = authenticator.login('Login', 'main')
+# Changed: 'main' is now passed as a keyword argument for location
+name, authentication_status, username = authenticator.login('Login', location='main')
 
 if authentication_status == False:
     st.error('Username/password is incorrect')
@@ -53,7 +54,8 @@ elif authentication_status:
     # Display logout button in sidebar
     with st.sidebar:
         st.write(f"Welcome, **{name}**!")
-        authenticator.logout('Logout', 'main') # 'main' places it in the main body, 'sidebar' places it in sidebar
+        # Changed: 'sidebar' is now passed as a keyword argument for location, and a unique 'key' is added
+        authenticator.logout('Logout', key='unique_logout_key', location='sidebar') # 'unique_logout_key' can be any unique string
 
     # --- MAIN APP CONTENT STARTS HERE ---
 
