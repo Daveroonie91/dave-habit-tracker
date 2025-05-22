@@ -20,12 +20,18 @@ authenticator = st_auth.Authenticate(
     config['cookie']['name'],
     config['cookie']['key'],
     config['cookie']['expiry_days'],
-    # config['preauthorized'] # This line was already removed
 )
 
 # --- LOGIN FORM ---
-# Changed: 'main' is now passed as a keyword argument for location
-name, authentication_status, username = authenticator.login('Login', location='main')
+# Call login to render the form. It no longer returns status/username/name directly here.
+authenticator.login('Login', location='main') # No assignment here
+
+# Access authentication status, username, and name directly from the authenticator object
+# after the login attempt has been processed.
+authentication_status = st.session_state["authentication_status"]
+username = st.session_state["username"]
+name = st.session_state["name"]
+
 
 if authentication_status == False:
     st.error('Username/password is incorrect')
@@ -54,8 +60,7 @@ elif authentication_status:
     # Display logout button in sidebar
     with st.sidebar:
         st.write(f"Welcome, **{name}**!")
-        # Changed: 'sidebar' is now passed as a keyword argument for location, and a unique 'key' is added
-        authenticator.logout('Logout', key='unique_logout_key', location='sidebar') # 'unique_logout_key' can be any unique string
+        authenticator.logout('Logout', key='unique_logout_key', location='sidebar')
 
     # --- MAIN APP CONTENT STARTS HERE ---
 
